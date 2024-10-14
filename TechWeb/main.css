@@ -43,7 +43,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 #hero {
-    background: url('src/lightImage.webp') no-repeat center center/cover;
+    background: url('src/images/webImage2.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -52,6 +52,10 @@ nav ul li a:hover {
     color: white;
     padding: 0 20px;
 }
+
+.intro {
+    color: #003300;
+  }
 
 .hero-content {
     max-width: 600px;
