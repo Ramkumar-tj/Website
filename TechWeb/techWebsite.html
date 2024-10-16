@@ -69,8 +69,8 @@
         <h2>Contact Me</h2>
         <form id="contact-form">
             <input type="text" id="name" placeholder="Ram Kumar" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
+            <input type="email" id="email" placeholder="Ram@gamil.com" required>
+            <textarea id="message" placeholder="Message" required></textarea>
             <button type="submit" class="cta-button">Send Message</button>
         </form>
         <p id="form-status"></p>
@@ -81,5 +81,11 @@
     </footer>
 
     <script src="custom.js"></script>
+    <script type="text/javascript"
+    src="emailCdn.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('PXqYTZlOQKZUeGK0A')
+  </script>
 </body>
 </html>
