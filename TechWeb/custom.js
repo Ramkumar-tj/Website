@@ -1,4 +1,3 @@
-// Smooth form validation
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -12,7 +11,29 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         document.getElementById('form-status').textContent = "Please fill in all fields.";
         document.getElementById('form-status').style.color = 'red';
     } else {
-        document.getElementById('form-status').textContent = "Thank you for reaching out!";
-        document.getElementById('form-status').style.color = 'green';
+        // Prepare data for emailjs
+        var triggerEmail = {
+            from_name: name,
+            email_Id: email,
+            message: message
+        };
+
+        // Send the email using EmailJS
+        emailjs.send("service_6u1a5z7", "template_xpe070b", triggerEmail)
+        .then(function(res) {
+            document.getElementById('form-status').textContent = "Kudos 😊, we will be reaching out soon!";
+            document.getElementById('form-status').style.color = 'green';
+            setTimeout(function() {
+                document.getElementById('form-status').textContent = '';
+            }, 5000);
+        })
+        .catch(function(err) {
+            document.getElementById('form-status').textContent = "There was an error sending your message.";
+            document.getElementById('form-status').style.color = 'red';
+            setTimeout(function() {
+                document.getElementById('form-status').textContent = '';
+            }, 5000);
+            console.error('EmailJS error:', err);
+        });
     }
 });
